@@ -180,27 +180,30 @@
 <h3 id="OK，开始我的表演！！"><a href="#OK，开始我的表演！！" class="headerlink" title="OK，开始我的表演！！"></a>OK，开始我的表演！！</h3><ul>
 <li>声明：本文的所有命令都是在root用户下进行操作，如果你是在普通用户下操作，如果出现报错不要慌，可以在命令前添加sudo或者和我一样，体验root用户的快乐～～</li>
 </ul>
-<ol>
-<li><p>下载cnpm，体验飞翔的快感～～～</p>
+<ul>
+<li>下载cnpm，体验飞翔的快感～～～</li>
+</ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registr=https://registry.npm.taobao.org  # 哈哈哈，你没看粗，是淘宝</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>下载hexo</p>
+
+<ul>
+<li>下载hexo</li>
+</ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli  # 看，立马就用到了cnpm，如果还是热衷国外的网速，那么就用npm安装吧</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>新建一个文件夹，随便起名。新建文件夹后直接进入它～</p>
+
+<ul>
+<li>新建一个文件夹，随便起名。新建文件夹后直接进入它～</li>
+</ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir big # 名字随意</span><br><span class="line">cd big</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>这个步骤具体叫啥我忘记了，不过看到这个命令，一个词瞬间冲到了我的脑子里，那就是“初始化”。哈哈哈哈哈！</p>
+
+<ul>
+<li>这个步骤具体叫啥我忘记了，不过看到这个命令，一个词瞬间冲到了我的脑子里，那就是“初始化”。哈哈哈哈哈！</li>
+</ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>到这里有一条分水岭，可以选择直接跳过本地启动博客，直接就给它怼到github，但是我这里还是啰嗦的写一下吧，因为这个东西现在不写后面还要写，都一样。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s  # 启动博客，然后终端会出现一个链接，鼠标点击就可以在浏览器看到博客了</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-</li>
-</ol>
-<ul>
 <li><p>如果能看到博客就已经成功了70%了，继续粪斗！！！</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;test1&quot; # 创建一个新的博客文件，名字随意，创建的博客文件是.md格式的，开心吧！</span><br></pre></td></tr></table></figure>
 </li>
@@ -211,27 +214,27 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean # 清除缓存文件 db.json 和已生成的静态文件 public</span><br><span class="line">hexo g # 生成静态文件</span><br><span class="line">hexo s # 启动博客再看一眼自己写的博客</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<ol start="5">
-<li><p>我们现在开始准备把博客上传到自己的github。在github新创建一个项目，建议名字遵照xxxx.github.io格式。然后在big文件夹内生成git的插件</p>
+<ul>
+<li>我们现在开始准备把博客上传到自己的github。在github新创建一个项目，建议名字遵照xxxx.github.io格式。然后在big文件夹内生成git的插件</li>
+</ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git # 运行完这个命令会在big文件夹内出现一个_config.yml文件</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>设置提交到github的地址，填写完成后保存退出。</p>
+
+<ul>
+<li>设置提交到github的地址，填写完成后保存退出。</li>
+</ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/big/_config.yml</span><br></pre></td></tr></table></figure>
 
 <p>![image-20200827172427089](/Users/shangjian/Library/Application Support/typora-user-images/image-20200827172427089.png)</p>
-</li>
-</ol>
-<ol start="7">
-<li><p>设置完成后，把项目推送到github上面</p>
+<ul>
+<li>设置完成后，把项目推送到github上面</li>
+</ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 
 
 
-</li>
-</ol>
-<ol start="8">
+<ul>
 <li>最后复制项目github上面的项目名称，然后粘贴到地址栏直接访问就可以看到自己的博客了。（可能会有点慢，多刷新！多刷新！）</li>
-</ol>
+</ul>
 <p>OK，到这里就结束了，我要接着调整我的博客了，各位老铁加油！！！</p>
 
       
