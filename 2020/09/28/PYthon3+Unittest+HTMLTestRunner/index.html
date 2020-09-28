@@ -13,7 +13,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    Hexo博客设置主题 |  This is Hornet Blog
+     This is Hornet Blog
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -59,33 +59,24 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-hexo设置主题"
+  id="post-PYthon3+Unittest+HTMLTestRunner"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
   data-scroll-reveal
 >
   <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  Hexo博客设置主题
-</h1>
- 
-
-    </header>
      
     <div class="article-meta">
-      <a href="/2020/09/11/hexo%E8%AE%BE%E7%BD%AE%E4%B8%BB%E9%A2%98/" class="article-date">
-  <time datetime="2020-09-11T07:51:00.000Z" itemprop="datePublished">2020-09-11</time>
+      <a href="/2020/09/28/PYthon3+Unittest+HTMLTestRunner/" class="article-date">
+  <time datetime="2020-09-28T02:55:06.217Z" itemprop="datePublished">2020-09-28</time>
 </a>   
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">357</span>
+            <span class="post-count">402</span>
         </span>
     </span>
 
@@ -107,44 +98,34 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <hr>
-<p>​    博客搭建并且部署成功后，就可以发布博客了。</p>
-<p>​    虽然说吧，默认的主题看着还不错，但是，如果有更好看的主题岂不美哉。Hexo<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">官网</a>就有很多好看的主题，那就随便找一个主题演示一下怎么设置。</p>
+  <p>HTMLTestRunner是Python2中的，因为自己的环境是Python3.6，所有语法不通，需要有一些改动。</p>
 <ul>
-<li><p>首先就是先打开官网，然后点击主题，随便一个主题，这里就拿官网的<a target="_blank" rel="noopener" href="https://shen-yu.gitee.io/">ayer</a>主题来演示。</p>
+<li><p>下载地址：<a target="_blank" rel="noopener" href="http://tungwaiyip.info/software/HTMLTestRunner.html%EF%BC%8C%E5%8F%B3%E9%94%AE%E5%8F%A6%E5%AD%98%E4%B8%BA%E5%B0%B1OK%E4%BA%86%E3%80%82">http://tungwaiyip.info/software/HTMLTestRunner.html，右键另存为就OK了。</a></p>
 </li>
-<li><p>点进ayer主题后，选择归档，然后找到网页最底部的（主题 - <a target="_blank" rel="noopener" href="https://github.com/Shen-Yu/hexo-theme-ayer">Ayer</a>）点击Ayer，进入github</p>
-</li>
-<li><p>进入github后，点击 Code，然后复制URL连接</p>
-</li>
-<li><p>打开终端，切换到博客文件夹内，（这里我的博客文件夹名字为：blog）把主题克隆到themes文件夹内</p>
+<li><p>下载文件放到自己电脑通过pip安装的包的文件夹内。（具体的可以在Pycharm上面随便点进去一个包，然后查看详细路径就OK）</p>
+<p>![image-20200928110614168](/Users/shangjian/Library/Application Support/typora-user-images/image-20200928110614168.png)</p>
 </li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd blog </span><br><span class="line">git clone https://github.com/Shen-Yu/hexo-theme-ayer.git ayer # 新建ayer文件夹并克隆到ayer文件夹内</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p><strong>修改文件</strong></p>
+<p>第94行，将import StringIO修改成import io</p>
+<p>第539行，将self.outputBuffer = StringIO.StringIO()修改成self.outputBuffer = io.StringIO()</p>
+<p>第642行，将if not rmap.has_key(cls):修改成if not cls in rmap:</p>
+<p>第766行，将uo = o.decode(‘latin-1’)修改成uo = e</p>
+<p>第772行，将ue = e.decode(‘latin-1’)修改成ue = e</p>
+<p>第631行，将print &gt;&gt; sys.stderr, ‘\nTime Elapsed: %s’ % (self.stopTime-self.startTime)修改成print(sys.stderr, ‘\nTime Elapsed: %s’ % (self.stopTime-self.startTime))</p>
+</li>
+<li><p><strong>引入使用</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导包：</span></span><br><span class="line"><span class="keyword">from</span> HTMLTestRunner <span class="keyword">import</span> HTMLTestRunner</span><br><span class="line"><span class="comment"># 使用</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="comment"># unittest.main()</span></span><br><span class="line">    suite = unittest.TestLoader().loadTestsFromTestCase(untest)</span><br><span class="line">    f = open(<span class="string">&#x27;./HTMLTest.html&#x27;</span>, <span class="string">&#x27;wb&#x27;</span>)</span><br><span class="line">    runner = HTMLTestRunner(stream=f, title=<span class="string">u&quot;接口自动化测试报告&quot;</span>, description=<span class="string">u&quot;用例执行情况如下：&quot;</span>)</span><br><span class="line">    runner.run(suite)</span><br><span class="line">    f.close()</span><br></pre></td></tr></table></figure>
 
 
 
-<ul>
-<li>克隆完成后，编辑blog文件夹内的_config.yml 文件夹</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim _config.yml</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>备注：如果不使用 from进行导包：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导包：</span></span><br><span class="line"><span class="keyword">import</span> HTMLTestRunner</span><br><span class="line"><span class="comment"># 使用</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="comment"># unittest.main()</span></span><br><span class="line">    suite = unittest.TestLoader().loadTestsFromTestCase(untest)</span><br><span class="line">    f = open(<span class="string">&#x27;./HTMLTest.html&#x27;</span>, <span class="string">&#x27;wb&#x27;</span>)</span><br><span class="line">    <span class="comment"># 只有这一行有区别</span></span><br><span class="line">    runner = HTMLTestRunner.HTMLTestRunner(stream=f, title=<span class="string">u&quot;接口自动化测试报告&quot;</span>, description=<span class="string">u&quot;用例执行情况如下：&quot;</span>)</span><br><span class="line">    runner.run(suite)</span><br><span class="line">    f.close()</span><br></pre></td></tr></table></figure>
 
-
-
-<ul>
-<li>打开 _config.yml 文件后，修改文件夹底部 them 属性为刚才克隆的主题 ayer，修改完成后保存并退出</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Extensions</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># Plugins: https://hexo.io/plugins/</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># Themes: https://hexo.io/themes/</span></span></span><br><span class="line">theme: ayer</span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li>设置好主题后清空一下缓存，然后启动博客就可以看到效果了，如果想同步到部署的github上，只需要在多输入一条命令即可。</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean  # 清空缓存</span><br><span class="line">hexo server # 启动hexo博客</span><br><span class="line">hexo deploy  # 推送到github</span><br></pre></td></tr></table></figure>
-
-
-
+<p>需要通过命令执行python文件才会生成测试报告，还在继续学习，如果后续解决了这个问题，会进行更新…</p>
  
       <!-- reward -->
       
@@ -203,7 +184,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/09/11/hexo%E8%AE%BE%E7%BD%AE%E4%B8%BB%E9%A2%98/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/09/28/PYthon3+Unittest+HTMLTestRunner/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -214,19 +195,10 @@
    
   <nav class="article-nav">
     
-      <a href="/2020/09/28/PYthon3+Unittest+HTMLTestRunner/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            (no title)
-          
-        </div>
-      </a>
     
-    
-      <a href="/2020/08/27/Mac-hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="article-nav-link">
+      <a href="/2020/09/11/hexo%E8%AE%BE%E7%BD%AE%E4%B8%BB%E9%A2%98/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">Mac hexo框架搭建博客</div>
+        <div class="article-nav-title">Hexo博客设置主题</div>
       </a>
     
   </nav>
